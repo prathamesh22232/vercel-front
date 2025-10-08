@@ -80,7 +80,6 @@ const Signup = () => {
         </form>
       </div>
       <p className="text-sm text-gray-500 mt-4">
-        *Ensure `REACT_APP_BACKEND_URL` is set correctly on Vercel to: `https://sggs-extc-departmental-web.onrender.com`
       </p>
     </div>
   );
