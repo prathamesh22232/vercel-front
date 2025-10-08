@@ -21,7 +21,7 @@ const Login = () => {
       localStorage.setItem("token", json.authtoken);
       navigate("/");
     } else {
-      alert("Invalid credentials");
+      alert("Invalid credentials or User does not exist");
     }
   };
 
