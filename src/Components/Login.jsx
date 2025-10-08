@@ -2,27 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 // import { REACT_APP_BACKEND_URL } from "../config";
 
-const Login = () => {
-  const [credentials, setCredentials] = useState({ email: "", password: "" });
-  const navigate = useNavigate();
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    // --- CORRECTION APPLIED HERE ---
-    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/auth/login`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(credentials),
-    });
-
-    const json = await response.json();
-    if (json.success) {
-      localStorage.setItem("token", json.authtoken);
-      navigate("/");
-    } else {
-      alert("Invalid credentials");
-    }
-  };
 
   const onChange = (e) =>
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
