@@ -11,8 +11,8 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // --- CORRECTION APPLIED HERE ---
-    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/auth/createuser`, {
+    // --- CORRECTION APPLIED: Using Vite syntax ---
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/auth/createuser`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(credentials),
@@ -80,7 +80,7 @@ const Signup = () => {
         </form>
       </div>
       <p className="text-sm text-gray-500 mt-4">
-      </p>
+      </p>
     </div>
   );
 };

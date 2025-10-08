@@ -9,8 +9,8 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // --- CORRECTION APPLIED HERE ---
-    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/auth/login`, {
+    // --- CORRECTION APPLIED: Using Vite syntax ---
+    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(credentials),
